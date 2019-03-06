@@ -1,7 +1,10 @@
 # Calculates factorial iteratively
 
-.text
+.data
+    n_prompt: .asciiz "n = "
+    fact_prompt: .asciiz "n! = "
 
+.text
 main:
     la $a0, n_prompt
     li $v0, 4
@@ -31,7 +34,3 @@ print:
 
     li $v0, 10
     syscall
-
-.data
-    n_prompt: .asciiz "n = "
-    fact_prompt: .asciiz "n! = "

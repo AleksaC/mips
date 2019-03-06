@@ -1,7 +1,10 @@
 # Computes sum of first n integers in a loop
 
-.text
+.data
+    n_prompt: .asciiz "n = "
+    sum_prompt: .asciiz "Sum of first n integers is: "
 
+.text
 main:
 	la $a0, n_prompt
 	li $v0, 4
@@ -32,7 +35,3 @@ print:
 
     li $v0, 10
     syscall
-
-.data
-	n_prompt: .asciiz "n = "
-	sum_prompt: .asciiz "Sum of first n integers is: "

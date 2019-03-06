@@ -1,7 +1,10 @@
 # Recursively calculates factorial of a given integer
 
-.text
+.data
+    n_prompt: .asciiz "n = "
+    fact_prompt: .asciiz "n! = "
 
+.text
 factorial:
     addi $sp, $sp, -8
     sw $a0, 0($sp)
@@ -45,7 +48,3 @@ main:
 
     li $v0, 10
     syscall
-    
-.data
-    n_prompt: .asciiz "n = "
-    fact_prompt: .asciiz "n! = "

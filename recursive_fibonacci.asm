@@ -1,7 +1,10 @@
 # Recursively calculates nth fibonacci number
 
-.text
+.data
+    n_prompt: .asciiz "n = "
+    fib_prompt: .asciiz "nth Fibonacci number is: "
 
+.text
 fib:
     addi $sp, $sp, -12
     sw $a0, 0($sp)
@@ -60,7 +63,3 @@ main:
 
     li $v0, 10
     syscall
-
-.data
-    n_prompt: .asciiz "n = "
-    fib_prompt: .asciiz "nth Fibonacci number is: "

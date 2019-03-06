@@ -2,4 +2,4 @@
 
 This repository contains exercises in MIPS 
 assembly done as practice for a partial exam
-in compilers course at my college.
+in compilers course at my university.

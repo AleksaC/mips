@@ -1,7 +1,10 @@
 # Loads 2 integers and prints the greater of the two
 
-.text
+.data
+    num_prompt: .asciiz "Enter a number: "
+    greater_prompt: .asciiz "The greater number is: "
 
+.text
 main:
     la $a0, num_prompt
     li $v0, 4
@@ -34,7 +37,3 @@ print:
     
     li $v0, 10
     syscall
-
-.data
-    num_prompt: .asciiz "Enter a number: "
-    greater_prompt: .asciiz "The greater number is: "
