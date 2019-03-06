@@ -5,6 +5,30 @@
     fib_prompt: .asciiz "nth Fibonacci number is: "
 
 .text
+main:
+    la $a0, n_prompt
+    li $v0, 4
+    syscall
+
+    li $v0, 5
+    syscall
+
+    move $a0, $v0
+    jal fib
+
+    move $t0, $v0
+
+    la $a0, fib_prompt
+    li $v0, 4
+    syscall
+
+    move $a0, $t0
+    li $v0, 1
+    syscall
+
+    li $v0, 10
+    syscall
+
 fib:
     addi $sp, $sp, -12
     sw $a0, 0($sp)
@@ -39,27 +63,3 @@ return:
     lw $ra, 4($sp)
     addi $sp, $sp, 12
     jr $ra
-
-main:
-    la $a0, n_prompt
-    li $v0, 4
-    syscall
-
-    li $v0, 5
-    syscall
-
-    move $a0, $v0
-    jal fib
-
-    move $t0, $v0
-
-    la $a0, fib_prompt
-    li $v0, 4
-    syscall
-
-    move $a0, $t0
-    li $v0, 1
-    syscall
-
-    li $v0, 10
-    syscall
