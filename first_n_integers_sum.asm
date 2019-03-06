@@ -6,16 +6,16 @@
 
 .text
 main:
-	la $a0, n_prompt
-	li $v0, 4
-	syscall
+    la $a0, n_prompt
+    li $v0, 4
+    syscall
 
-	li $v0, 5
-	syscall
+    li $v0, 5
+    syscall
 
-	move $t0, $v0
+    move $t0, $v0
 
-	li $t1, 0 # current number
+    li $t1, 0 # current number
     li $t2, 0 # sum
 
 loop:
